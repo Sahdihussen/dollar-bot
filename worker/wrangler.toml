@@ -1,0 +1,8 @@
+name = "dollar-bot-api"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+workers_dev = true
+
+# Secrets are set separately (never committed):
+#   npx wrangler secret put SUPABASE_URL
+#   npx wrangler secret put SUPABASE_SERVICE_ROLE_KEY

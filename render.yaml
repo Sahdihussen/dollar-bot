@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: dollar-bot
+    runtime: python
+    plan: free
+    branch: main
+    # Frontend dist/ is committed pre-built (Render's Python runtime has no Node).
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TG_API_ID
+        sync: false
+      - key: TG_API_HASH
+        sync: false
+      - key: TG_SESSION
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: MISTRAL_API_KEY
+        sync: false
+      - key: ORCAROUTER_API_KEY
+        sync: false
+      - key: SANITY_MIN_RATE
+        value: "140000"
+      - key: SANITY_MAX_RATE
+        value: "165000"
+      - key: OUTLIER_THRESHOLD_IQD
+        value: "3000"
+      - key: SELF_PING_SECONDS
+        value: "600"

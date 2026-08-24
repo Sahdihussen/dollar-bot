@@ -1,0 +1,9 @@
+node_modules/
+# NOTE: dist/ IS committed on purpose - Render's Python runtime has no Node,
+# so the pre-built frontend ships with the repo.
+isolate/
+__pycache__/
+*.pyc
+.env
+.env.local
+logs/
